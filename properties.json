@@ -1,0 +1,14 @@
+{
+    {%- for key, value in inserted_dict.items() -%}
+    "{{key}}": {
+        "rich_text": [
+            {
+                "type": "text",
+                "text": {
+                    "content": "{{value}}"
+                }
+            }
+        ]
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+}
